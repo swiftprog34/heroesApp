@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Commands" representedClassName="Commands" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="heroes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Heroes" inverseName="commands" inverseEntity="Heroes"/>
+    </entity>
+    <entity name="Heroes" representedClassName="Heroes" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phrase" optional="YES" attributeType="String"/>
+        <relationship name="commands" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Commands" inverseName="heroes" inverseEntity="Commands"/>
+    </entity>
+    <elements>
+        <element name="Commands" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Heroes" positionX="-54" positionY="0" width="128" height="104"/>
+    </elements>
+</model>
