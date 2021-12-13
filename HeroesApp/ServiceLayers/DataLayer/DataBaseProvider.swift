@@ -8,9 +8,16 @@
 import Foundation
 import CoreData
 
-class DataBaseProvider {
-    
-    var shared = DataBaseProvider()
+protocol DataBaseProviderProtocol {
+    func saveContext()
+    func deleteContext(_ object: NSManagedObject)
+}
+
+class DataBaseProvider: DataBaseProviderProtocol {
+    static let shared: DataBaseProvider = {
+        let instance = DataBaseProvider()
+        return instance
+    }()
     var context: NSManagedObjectContext?
     
     private init(){
