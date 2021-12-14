@@ -10,6 +10,7 @@ import UIKit
 protocol AssemblerProtocol {
     func makeMainModule(router: RouterProtocol) -> UIViewController
     func makeCreateCommandModule(router: RouterProtocol) -> UIViewController
+    func makeCreateHeroModule(router: RouterProtocol) -> UIViewController
 }
 
 class Assembler: AssemblerProtocol {
@@ -27,6 +28,15 @@ class Assembler: AssemblerProtocol {
         let view = CreateCommandViewController()
         let networkService = NetworkService()
         let presenter = CreateCommandPresenter(view: view, networkService: networkService, router: router, dbProvider: dbProvider)
+        view.presenter = presenter
+        return view
+    }
+    
+    func makeCreateHeroModule(router: RouterProtocol) -> UIViewController {
+        let dbProvider = DataBaseProvider.shared
+        let view = CreateHeroViewController()
+        let networkService = NetworkService()
+        let presenter = CreateHeroPresenter(view: view, networkService: networkService, router: router, dbProvider: dbProvider)
         view.presenter = presenter
         return view
     }

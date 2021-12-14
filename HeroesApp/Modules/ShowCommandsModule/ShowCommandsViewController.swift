@@ -11,19 +11,25 @@ class ShowCommandsViewController: UIViewController {
 
     var commandsTableView: UITableView!
     var presenter: ShowCommandsPresenterProtocol!
+    let searchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
         title = "List of commands"
         configureSubViews()
     }
 
     func configureSubViews(){
-        commandsTableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        commandsTableView = UITableView()
         commandsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Command")
         commandsTableView.delegate = self
         commandsTableView.dataSource = self
         self.view.addSubview(commandsTableView)
+        commandsTableView.snp.makeConstraints { make in
+            make.width.height.equalToSuperview()
+        }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: .add, style: .plain, target: self, action: #selector(createNewCommandDidTapped))
     }

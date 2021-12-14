@@ -13,6 +13,7 @@ protocol CreateCommandViewProtocol: AnyObject {
 
 protocol CreateCommandPresenterProtocol {
     init (view: CreateCommandViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol, dbProvider: DataBaseProviderProtocol)
+    func createNewHeroDidTapped()
 }
 
 class CreateCommandPresenter: CreateCommandPresenterProtocol {
@@ -29,4 +30,7 @@ class CreateCommandPresenter: CreateCommandPresenterProtocol {
         self.dbProvider = dbProvider
     }
 
+    func createNewHeroDidTapped() {
+        router?.showCreateHeroModule()
+    }
 }

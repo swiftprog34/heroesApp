@@ -13,6 +13,7 @@ protocol RouterProtocol {
     
     func initialViewController()
     func showCreateCommandModule()
+    func showCreateHeroModule()
 }
 
 class Router: RouterProtocol {
@@ -35,6 +36,13 @@ class Router: RouterProtocol {
         if let navigationController = navigationController {
             guard let createCommandViewController  = assembler?.makeCreateCommandModule(router: self) else { return }
             navigationController.pushViewController(createCommandViewController, animated: true)
+        }
+    }
+    
+    func showCreateHeroModule() {
+        if let navigationController = navigationController {
+            guard let createHeroViewController  = assembler?.makeCreateHeroModule(router: self) else { return }
+            navigationController.pushViewController(createHeroViewController, animated: true)
         }
     }
 }
