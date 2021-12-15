@@ -19,12 +19,18 @@
 		3543B701276661EA0005871B /* ShowCommandsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B700276661EA0005871B /* ShowCommandsPresenter.swift */; };
 		3543B703276662090005871B /* CreateCommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B702276662090005871B /* CreateCommandViewController.swift */; };
 		3543B705276662180005871B /* CreateCommandPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B704276662180005871B /* CreateCommandPresenter.swift */; };
-		3543B707276662270005871B /* CreateHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B706276662270005871B /* CreateHeroViewController.swift */; };
+		3543B707276662270005871B /* CreateHeroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B706276662270005871B /* CreateHeroTableViewController.swift */; };
 		3543B709276662350005871B /* CreateHeroPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B708276662350005871B /* CreateHeroPresenter.swift */; };
 		3543B70B2766624A0005871B /* EditCommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B70A2766624A0005871B /* EditCommandViewController.swift */; };
 		3543B70D276662580005871B /* EditCommandPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543B70C276662580005871B /* EditCommandPresenter.swift */; };
 		35A801592768E9C500D08223 /* CustomizeHeroPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A801582768E9C500D08223 /* CustomizeHeroPresenter.swift */; };
 		35A8015B2768E9DC00D08223 /* CustomizeHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8015A2768E9DC00D08223 /* CustomizeHeroViewController.swift */; };
+		35A8015D276936C300D08223 /* CreateHeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8015C276936C300D08223 /* CreateHeroTableViewCell.swift */; };
+		35A8015F27693C4300D08223 /* CreateHeroHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8015E27693C4300D08223 /* CreateHeroHeaderTableViewCell.swift */; };
+		35A8016127694E7B00D08223 /* UIViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8016027694E7B00D08223 /* UIViewExtentions.swift */; };
+		35A80163276969A400D08223 /* ShowCommandsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80162276969A400D08223 /* ShowCommandsTableViewCell.swift */; };
+		35A8016527696B3200D08223 /* CreateCommandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8016427696B3200D08223 /* CreateCommandTableViewCell.swift */; };
+		35A8016727696B5300D08223 /* CreateCommandHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A8016627696B5300D08223 /* CreateCommandHeaderTableViewCell.swift */; };
 		35B4558227663A8B00850909 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B4558127663A8B00850909 /* AppDelegate.swift */; };
 		35B4558427663A8B00850909 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B4558327663A8B00850909 /* SceneDelegate.swift */; };
 		35B4558C27663A8B00850909 /* HeroesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 35B4558A27663A8B00850909 /* HeroesApp.xcdatamodeld */; };
@@ -66,12 +72,18 @@
 		3543B700276661EA0005871B /* ShowCommandsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCommandsPresenter.swift; sourceTree = "<group>"; };
 		3543B702276662090005871B /* CreateCommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommandViewController.swift; sourceTree = "<group>"; };
 		3543B704276662180005871B /* CreateCommandPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommandPresenter.swift; sourceTree = "<group>"; };
-		3543B706276662270005871B /* CreateHeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHeroViewController.swift; sourceTree = "<group>"; };
+		3543B706276662270005871B /* CreateHeroTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHeroTableViewController.swift; sourceTree = "<group>"; };
 		3543B708276662350005871B /* CreateHeroPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHeroPresenter.swift; sourceTree = "<group>"; };
 		3543B70A2766624A0005871B /* EditCommandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommandViewController.swift; sourceTree = "<group>"; };
 		3543B70C276662580005871B /* EditCommandPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommandPresenter.swift; sourceTree = "<group>"; };
 		35A801582768E9C500D08223 /* CustomizeHeroPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeHeroPresenter.swift; sourceTree = "<group>"; };
 		35A8015A2768E9DC00D08223 /* CustomizeHeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeHeroViewController.swift; sourceTree = "<group>"; };
+		35A8015C276936C300D08223 /* CreateHeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHeroTableViewCell.swift; sourceTree = "<group>"; };
+		35A8015E27693C4300D08223 /* CreateHeroHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHeroHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		35A8016027694E7B00D08223 /* UIViewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtentions.swift; sourceTree = "<group>"; };
+		35A80162276969A400D08223 /* ShowCommandsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCommandsTableViewCell.swift; sourceTree = "<group>"; };
+		35A8016427696B3200D08223 /* CreateCommandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommandTableViewCell.swift; sourceTree = "<group>"; };
+		35A8016627696B5300D08223 /* CreateCommandHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommandHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		35B4557E27663A8B00850909 /* HeroesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeroesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B4558127663A8B00850909 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35B4558327663A8B00850909 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +163,7 @@
 			children = (
 				3543B6FE276661D50005871B /* ShowCommandsViewController.swift */,
 				3543B700276661EA0005871B /* ShowCommandsPresenter.swift */,
+				35A80162276969A400D08223 /* ShowCommandsTableViewCell.swift */,
 			);
 			path = ShowCommandsModule;
 			sourceTree = "<group>";
@@ -160,6 +173,8 @@
 			children = (
 				3543B702276662090005871B /* CreateCommandViewController.swift */,
 				3543B704276662180005871B /* CreateCommandPresenter.swift */,
+				35A8016427696B3200D08223 /* CreateCommandTableViewCell.swift */,
+				35A8016627696B5300D08223 /* CreateCommandHeaderTableViewCell.swift */,
 			);
 			path = CreateCommandModule;
 			sourceTree = "<group>";
@@ -167,8 +182,10 @@
 		3543B6F12766605D0005871B /* CreateHeroModule */ = {
 			isa = PBXGroup;
 			children = (
-				3543B706276662270005871B /* CreateHeroViewController.swift */,
+				3543B706276662270005871B /* CreateHeroTableViewController.swift */,
 				3543B708276662350005871B /* CreateHeroPresenter.swift */,
+				35A8015C276936C300D08223 /* CreateHeroTableViewCell.swift */,
+				35A8015E27693C4300D08223 /* CreateHeroHeaderTableViewCell.swift */,
 			);
 			path = CreateHeroModule;
 			sourceTree = "<group>";
@@ -187,6 +204,7 @@
 			children = (
 				3543B6F4276660ED0005871B /* Router.swift */,
 				3543B6F6276660F70005871B /* Assembler.swift */,
+				35A8016027694E7B00D08223 /* UIViewExtentions.swift */,
 			);
 			path = AppLayer;
 			sourceTree = "<group>";
@@ -541,12 +559,18 @@
 				3543B70B2766624A0005871B /* EditCommandViewController.swift in Sources */,
 				3543B6E827665ABF0005871B /* DataBaseProvider.swift in Sources */,
 				3543B6F7276660F70005871B /* Assembler.swift in Sources */,
+				35A80163276969A400D08223 /* ShowCommandsTableViewCell.swift in Sources */,
 				35A8015B2768E9DC00D08223 /* CustomizeHeroViewController.swift in Sources */,
+				35A8016527696B3200D08223 /* CreateCommandTableViewCell.swift in Sources */,
 				3543B703276662090005871B /* CreateCommandViewController.swift in Sources */,
+				35A8015F27693C4300D08223 /* CreateHeroHeaderTableViewCell.swift in Sources */,
 				3543B6FF276661D50005871B /* ShowCommandsViewController.swift in Sources */,
 				3543B6FD276661930005871B /* Hero.swift in Sources */,
+				35A8015D276936C300D08223 /* CreateHeroTableViewCell.swift in Sources */,
 				3543B6EB27665CD90005871B /* CommandsProvider.swift in Sources */,
-				3543B707276662270005871B /* CreateHeroViewController.swift in Sources */,
+				3543B707276662270005871B /* CreateHeroTableViewController.swift in Sources */,
+				35A8016727696B5300D08223 /* CreateCommandHeaderTableViewCell.swift in Sources */,
+				35A8016127694E7B00D08223 /* UIViewExtentions.swift in Sources */,
 				3543B70D276662580005871B /* EditCommandPresenter.swift in Sources */,
 				35B4558C27663A8B00850909 /* HeroesApp.xcdatamodeld in Sources */,
 				35B4558227663A8B00850909 /* AppDelegate.swift in Sources */,

@@ -34,7 +34,7 @@ class Assembler: AssemblerProtocol {
     
     func makeCreateHeroModule(router: RouterProtocol) -> UIViewController {
         let dbProvider = DataBaseProvider.shared
-        let view = CreateHeroViewController()
+        let view = CreateHeroTableViewController()
         let networkService = NetworkService()
         let presenter = CreateHeroPresenter(view: view, networkService: networkService, router: router, dbProvider: dbProvider)
         view.presenter = presenter
