@@ -17,7 +17,7 @@ class CreateHeroHeaderTableViewCell: UITableViewHeaderFooterView {
         return label
     }()
     
-    let headersNameArray = ["CHOOSE BASE ITEMS", "ADD IMAGE", "ADD EQUIPMENT", ""]
+    let headersNameArray = ["ADD IMAGE", "CHOOSE BASE ITEMS", "ADD EQUIPMENT", ""]
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)

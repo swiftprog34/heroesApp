@@ -8,6 +8,11 @@
 import UIKit
 import SnapKit
 
+protocol CreateHeroTableViewCellDelegate: AnyObject {
+    func didTapGenerateButton(_ cell: CreateHeroTableViewCell)
+    func didTapCreateButton(_ cell: CreateHeroTableViewCell)
+}
+
 class CreateHeroTableViewCell: UITableViewCell {
     
     let backgroundViewCell: UIView = {
@@ -55,10 +60,12 @@ class CreateHeroTableViewCell: UITableViewCell {
     }()
     
     let creatingItemsArray = [
-        ["Name", "Phrase"],
         [""],
-        ["Left hand", "Right hand", "Head", "Chest", "Legs"],
+        ["Name", "Phrase"],
+        ["Arms", "Head", "Chest", "Legs"],
         [""]]
+    
+    weak var delegate: CreateHeroTableViewCellDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -67,7 +74,19 @@ class CreateHeroTableViewCell: UITableViewCell {
         
         self.selectionStyle = .none
         self.backgroundColor = .clear
+        
+        heroGenerateButton.addTarget(self, action: #selector(didTapGenerate), for: .touchUpInside)
+        heroCreateButton.addTarget(self, action: #selector(didTapCreate), for: .touchUpInside)
     }
+    
+    @objc func didTapGenerate() {
+        delegate?.didTapGenerateButton(self)
+    }
+    
+    @objc func didTapCreate() {
+        delegate?.didTapCreateButton(self)
+    }
+
     
     func setConstraints() {
         self.addSubview(backgroundViewCell)
@@ -111,7 +130,7 @@ class CreateHeroTableViewCell: UITableViewCell {
     func configure(indexPath: IndexPath) {
         nameCellLabel.text = creatingItemsArray[indexPath.section][indexPath.row]
         
-        if indexPath == [1,0] {
+        if indexPath == [0,0] {
             heroAvatarImageView.isHidden = false
             backgroundViewCell.backgroundColor = .none
         }
@@ -121,15 +140,7 @@ class CreateHeroTableViewCell: UITableViewCell {
             heroGenerateButton.isHidden = false
             backgroundViewCell.backgroundColor = .none
         }
-        
-//        if indexPath == [3,0] || indexPath == [3,1] {
-//            nameCellLabel.snp.makeConstraints { make in
-//                make.centerY.centerX.equalToSuperview()
-//            }
-//            nameCellLabel.textAlignment = .center
-//            nameCellLabel.textColor = .white
-//            backgroundViewCell.backgroundColor = .blue
-//        }
+
     }
     
     required init?(coder: NSCoder) {

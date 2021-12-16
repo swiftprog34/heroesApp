@@ -8,12 +8,12 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func getComments(completion: @escaping (Result<[Hero]?, Error>) -> Void )
+    func fetchHeroData(completion: @escaping (Result<Hero?, Error>) -> Void )
 }
 
 class NetworkService: NetworkServiceProtocol {
-    func getComments(completion: @escaping (Result<[Hero]?, Error>) -> Void) {
-        let urlString = ""
+    func fetchHeroData(completion: @escaping (Result<Hero?, Error>) -> Void) {
+        let urlString = "https://randomuser.me/api/"
         guard let url =  URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _ , error in
@@ -23,7 +23,7 @@ class NetworkService: NetworkServiceProtocol {
             }
             
             do {
-                let obj = try JSONDecoder().decode([Hero].self, from: data!)
+                let obj = try JSONDecoder().decode(Hero.self, from: data!)
                 completion(.success(obj))
             } catch {
                 completion(.failure(error))
@@ -31,3 +31,5 @@ class NetworkService: NetworkServiceProtocol {
         }.resume()
     }
 }
+
+

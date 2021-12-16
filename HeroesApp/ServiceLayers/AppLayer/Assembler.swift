@@ -27,7 +27,8 @@ class Assembler: AssemblerProtocol {
         let dbProvider = DataBaseProvider.shared
         let view = CreateCommandViewController()
         let networkService = NetworkService()
-        let presenter = CreateCommandPresenter(view: view, networkService: networkService, router: router, dbProvider: dbProvider)
+        let entityProvider = CommandsProvider()
+        let presenter = CreateCommandPresenter(view: view, networkService: networkService, router: router, dbProvider: dbProvider, entityProvider: entityProvider)
         view.presenter = presenter
         return view
     }
@@ -36,7 +37,8 @@ class Assembler: AssemblerProtocol {
         let dbProvider = DataBaseProvider.shared
         let view = CreateHeroTableViewController()
         let networkService = NetworkService()
-        let presenter = CreateHeroPresenter(view: view, networkService: networkService, router: router, dbProvider: dbProvider)
+        let entityProvider = HeroesProvider()
+        let presenter = CreateHeroPresenter(view: view, networkService: networkService, router: router, dbProvider: dbProvider, entityProvider: entityProvider)
         view.presenter = presenter
         return view
     }

@@ -25,6 +25,7 @@ class CreateCommandViewController: UIViewController {
         heroesTableView.backgroundColor = .systemGray6
         heroesTableView.separatorStyle = .none
         configureSubViews()
+        presenter.testCoreData()
     }
     
     
@@ -37,7 +38,7 @@ class CreateCommandViewController: UIViewController {
     
 }
 
-//MARK: Table view
+//MARK: Extentions
 extension CreateCommandViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -70,6 +71,8 @@ extension CreateCommandViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = heroesTableView.dequeueReusableCell(withIdentifier: commandCellIdentifier, for: indexPath) as! CreateCommandTableViewCell
         cell.configure(indexPath: indexPath)
+        cell.delegate = self
+        cell.contentView.isUserInteractionEnabled = false
         return cell
     }
     
@@ -83,13 +86,9 @@ extension CreateCommandViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.cellForRow(at: indexPath) as! CreateCommandTableViewCell
         switch indexPath {
         case [0,0]: alertForCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name")
-        case [2,0]: createNewHeroDidTapped()
+
         default: print("none")
         }
-    }
-    
-    func createNewHeroDidTapped() {
-        presenter.createNewHeroDidTapped()
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -102,7 +101,19 @@ extension CreateCommandViewController: UITableViewDelegate, UITableViewDataSourc
     }
 }
 
-//MARK: Create command view protocol
 extension CreateCommandViewController: CreateCommandViewProtocol {
+    func receiveAlertInformation(title: String, message: String) {
+        alertInformation(title: title, message: message)
+    }
+}
+
+
+extension CreateCommandViewController: CreateCommandTableViewCellDelegate {
+    func didTapCreateHeroButton(_ cell: CreateCommandTableViewCell) {
+        presenter.createNewHeroDidTapped()
+    }
     
+    func didTapCreateButton(_ cell: CreateCommandTableViewCell) {
+        presenter.createCommand()
+    }
 }

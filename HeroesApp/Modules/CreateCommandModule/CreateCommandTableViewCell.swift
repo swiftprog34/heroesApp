@@ -8,6 +8,11 @@
 import UIKit
 import SnapKit
 
+protocol CreateCommandTableViewCellDelegate: AnyObject {
+    func didTapCreateButton(_ cell: CreateCommandTableViewCell)
+    func didTapCreateHeroButton(_ cell: CreateCommandTableViewCell)
+}
+
 class CreateCommandTableViewCell: UITableViewCell {
     
     let backgroundViewCell: UIView = {
@@ -49,6 +54,8 @@ class CreateCommandTableViewCell: UITableViewCell {
         [""],
         [""]]
     
+    weak var delegate: CreateCommandTableViewCellDelegate?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -56,6 +63,17 @@ class CreateCommandTableViewCell: UITableViewCell {
         
         self.selectionStyle = .none
         self.backgroundColor = .clear
+        
+        commandCreateButton.addTarget(self, action: #selector(didTapCreate), for: .touchUpInside)
+        addNewHeroButton.addTarget(self, action: #selector(didTapAddHero), for: .touchUpInside)
+    }
+    
+    @objc func didTapCreate() {
+        delegate?.didTapCreateButton(self)
+    }
+    
+    @objc func didTapAddHero() {
+        delegate?.didTapCreateHeroButton(self)
     }
     
     func setConstraints() {
